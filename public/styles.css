@@ -1,0 +1,236 @@
+body {
+    background-color: lightcyan;
+    background-size: 400% 400%;
+    animation: gradient 15seaseinfinite;
+    height: 100vh;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+#category button {
+    background-color: #282828;
+    color: white;
+    font-size: 13px;
+    width: 90px;
+    height: 30px;
+    margin: 7px;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.5s; /* Add transition for a smooth effect */
+}
+
+#category button:hover {
+    background-color: #404040; /* Change to a darker color or any desired hover effect */
+    transform: scale(1.1); /* Increase the scale factor for a growing effect */
+}
+
+
+#sentence {
+    font-family: 'Cairo', sans-serif;
+    font-size: 25px;
+    margin: 10px;
+    margin-top: 30px;
+    color: #930b0b;
+    text-align: center;
+} 
+
+#recordingsList button {
+    font-size: 16px;
+    margin: 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#recordingsList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#startRecord {
+    background: url(images/microphone-black-shape.png) no-repeat center;
+    background-size: 20px 20px;
+    background-color: #28a745;
+    border: none;
+    color: 28a745;
+}
+
+#startRecord.pulsing {
+    animation: pulse 1s infinite; /* Add pulse animation when the "pulsing" class is present */
+    background-color: red;
+}
+
+#startRecord:disabled {
+    opacity: 0.5;
+}
+
+#stopRecord,
+#deleteRecord {
+    border: none;
+    color: white;
+}
+
+#stopRecord {
+    background: url(images/pause.ico) no-repeat center;
+    background-size: 20px 20px;
+    background-color: #646464;
+}
+
+#stopRecord:disabled {
+    opacity: 0.5;
+}
+
+#deleteRecord {
+    background: url(images/trash-2-48.ico) no-repeat center;
+    background-size: 25px 25px;
+    background-position-x: 8px;
+    background-color: #f44336;
+}
+
+#deleteRecord:disabled {
+    opacity: 0.5;
+}
+
+#stopRecord:hover,
+#deleteRecord:hover {
+    animation: none; /* Remove pulse animation on hover */
+}
+
+#aud {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+audio {
+    border-radius: 20px;
+    background-color: #17183b;
+    margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.sound-wave-bars {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.bar {
+    height: 20px;
+    width: 2px;
+    background-color: #ff6961;
+    border-radius: 4px;
+    margin: 0 4px;
+    animation: largeWaveAnim ease-in-out infinite alternate;
+}
+
+@keyframes largeWaveAnim {
+    0% {
+        height: 40px;
+        opacity: 0.33;
+    }
+    100% {
+        height: 80px;
+        opacity: 1;
+    }
+}
+
+.bar:nth-child(-n+10), .bar:nth-child(-n+10) {
+    background-color: #77dd77;
+    animation-name: mediumWaveAnim;
+
+}
+
+@keyframes mediumWaveAnim {
+    0% {
+        height: 30px;
+        opacity: 0.33;
+    }
+    100% {
+        height: 75px;
+        opacity: 1;
+    }
+}
+
+.bar:nth-child(-n+5), .bar:nth-child(-n+5) {
+    background-color: #aec6cf;
+    animation-name: smallWaveAnim;
+}
+
+@keyframes smallWaveAnim {
+    0% {
+        height: 20px;
+        opacity: 0.33;
+    }
+    100% {
+        height: 50px;
+        opacity: 1;
+    }
+    
+}
+
+#controls {
+    margin: 20px;
+    margin-top: 40px;
+}
+
+#send {
+    display: block;
+    margin: 0 auto; /* This will center the button horizontally */
+    width: 140px;
+    font-size: 23px;
+    /* color: white; */
+    margin-top: 30px;
+    /* background-color: #4CAF50; */
+    border-radius: 10px;
+    /* border-color: #33b562; */
+}
+
+#previous {
+    width: 110px;
+    font-size: 23px;
+    /* color: white; */
+    margin: 10px;
+    float: left;
+    /* background-color: #000000; */
+    border-radius: 10px;
+    /* border-color: #646464; */
+}
+
+#previous:disabled {
+    opacity: 0.3;
+}
+
+#next {
+    width: 110px;
+    font-size: 23px;
+    /* color: white; */
+    margin: 10px;
+    float: right;
+    /* background-color: #000000; */
+    border-radius: 10px;
+    /* border-color: #646464; */
+}
+
+#next:disabled {
+    opacity: 0.3;
+}

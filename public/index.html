@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Recorder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-rbs5shS7i7HxxjCaFjwI8Nf2JCkT38W0z5TC6AKw9KHpK8pLjoODIfXQtbT1H3km" crossorigin="anonymous">
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+</head>
+<body>
+    <nav class="navbar bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="color: white;">CHAT APPLICATION FOR DISABILITIES</a>
+        </div>
+      </nav>
+      
+      <!-- As a heading -->
+    <nav class="navbar bg-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        اختر الفعل
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <button id="call" class="dropdown-item" onclick="updateCategory('اتصل')">اتصل</button>
+                        <button id="endCall" class="dropdown-item" onclick="updateCategory('انهاء')">انهاء</button>
+                        <button id="openChat" class="dropdown-item"  onclick="updateCategory('قتح محادثه')">فتح محادثة</button>
+                        <button id="closeChat" class="dropdown-item" onclick="updateCategory('غلق محادثه')">غلق محادثة</button>
+                        <button id="openedChat" class="dropdown-item" onclick="updateCategory('محادثه مفتوحه')">محادثة مفتوحة</button>
+                        <button id="readMessages" class="dropdown-item" onclick="updateCategory('اقرأ الرسائل')">اقرأ الرسائل</button>
+                        <button id="textMessage" class="dropdown-item" onclick="updateCategory('رساله نصيه')">رسالة نصية</button>
+                        <button id="voiceMessage" class="dropdown-item" onclick="updateCategory('رساله صوتيه')">رسالة صوتية</button>
+                        <button id="block" class="dropdown-item" onclick="updateCategory('حظر')">حظر</button>
+                        <button id="unblock" class="dropdown-item" onclick="updateCategory('فك حظر')">فك حظر</button>
+                    </div>
+                </div>
+            </span>
+        </div>
+    </nav>
+    <!-- <div class="d-flex flex-column justify-content-center w-100 h-100"></div> -->
+
+    <div>
+        <p id="sentence">ارسل رسالة نصية الى علي محمد مجدي</p>
+    </div>
+    <div id="aud">
+        <audio id="audio" controls></audio>
+        <div class="sound-wave-bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+    <div id="recordingsList">
+        <button id="startRecord" onclick="togglePulse()"></button>
+        <button id="stopRecord" disabled></button>
+        <button id="deleteRecord" disabled></button>
+    </div>
+    <div>
+        <button id="send" type="button" class="btn btn-success">ارسال</button>
+    </div>
+    <div id="controls">
+        <button id="previous" type="button" class="btn btn-dark">السابق</button>
+        <button id="next" type="button" class="btn btn-dark">التالي</button>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-eUHJxqOJz8WNv/nVHKq6I+LXlwU5TJb3TJxuUJQV8qybpjU/6Z4P9zmhL3e9e2tE" crossorigin="anonymous"></script>
+    <script>
+        function updateCategory(category) {
+            document.getElementById("dropdownMenuButton").innerText = category;
+        }
+    </script>
+</body>
+</html>
